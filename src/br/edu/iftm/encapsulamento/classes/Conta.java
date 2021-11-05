@@ -66,10 +66,10 @@ public class Conta{
     }
 
     //**
-    /*public double mostrar(){
+    public double mostrar(){
         double saldoTotal = this.saldo + this.limite;;
         return saldoTotal;
-    }*/
+    }
 
     public int getNumero(){
         return this.numero;

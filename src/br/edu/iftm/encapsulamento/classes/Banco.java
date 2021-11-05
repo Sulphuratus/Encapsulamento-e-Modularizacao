@@ -1,5 +1,6 @@
 package br.edu.iftm.encapsulamento.classes;
 
+import javax.print.attribute.standard.JobHoldUntil;
 import javax.swing.JOptionPane;
 
 public class Banco {
@@ -64,9 +65,9 @@ public class Banco {
             return conta.transferir(destino, valor);
         }
         //** 
-        /*public double mostraSaldo(Conta conta){
+        public double mostraSaldo(Conta conta){
             return conta.mostrar();
-        }*/
+        }
 
         public int realizaOperacao(){
             System.out.println("Menu:");
@@ -74,7 +75,7 @@ public class Banco {
             System.out.println("2 - Efetuar saque ");
             System.out.println("3 - Efetuar depósito ");
             System.out.println("4 - Efetuar transferência ");
-            //System.out.println("5 - Visualizar saldo ");
+            System.out.println("5 - Visualizar saldo ");
             System.out.println("0 - Sair ");
             String temp = inputDados("Qual opção deseja escolher? ");
             int opcao = Integer.parseInt(temp);
@@ -112,16 +113,18 @@ public class Banco {
                     operacaoTransferir(c, valor, d);
                 }
                 //**
-            }/*else if (opcao == 5){
+            }else if (opcao == 5){
                 temp = inputDados("Digite o número da conta");
                 Integer numero = Integer.parseInt(temp);
                 Conta c = buscarConta(numero);
                 if (c != null){
-                    System.out.println("Saldo atual: " + mostraSaldo(c));
+                    JOptionPane.showMessageDialog(null, mostraSaldo(c), "Saldo Atual", JOptionPane.INFORMATION_MESSAGE);
+                    //System.out.println("Saldo atual: " + mostraSaldo(c));
                 }else{
-                    System.out.println("Conta inexistente!");
+                    JOptionPane.showMessageDialog(null, "Conta Inexistente!", "Operação Inválida", JOptionPane.INFORMATION_MESSAGE);
+                    //System.out.println("Conta inexistente!");
                 }
-            }*/
+            }
             return opcao;
         }
         
