@@ -46,6 +46,10 @@ public class Banco {
 
         public Conta buscarConta(int numero){
             for (Conta conta : vetorContas) {
+                if (conta == null){
+                    JOptionPane.showMessageDialog(null,"Conta Inexistente!","Operação Inválida",JOptionPane.INFORMATION_MESSAGE);
+                    return null;
+                }
                 if (conta.getNumero() == numero){
                     return conta;
                 }
@@ -112,6 +116,31 @@ public class Banco {
                     double valor  = Double.parseDouble(temp);
                     operacaoTransferir(c, valor, d);
                 }
+
+                /*temp = inputDados("Digite o numero da conta de origem: ");
+                Integer numero = Integer.parseInt(temp);
+                Conta c = buscarConta(numero);
+                if (c == null){
+                    JOptionPane.showMessageDialog(null, "Conta Inexistente!", "Operação Inváida", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    temp = inputDados("Digite o numero da conta de destino: ");
+                    numero = Integer.parseInt(temp);
+                    Conta d = buscarConta(numero);
+                if ( d == null){
+                    JOptionPane.showMessageDialog(null, "Conta Inexistente!", "Operação Inváida", JOptionPane.INFORMATION_MESSAGE);    
+                    }
+                    temp = inputDados("Digite o valor do depósito: ");
+                    double valor  = Double.parseDouble(temp);
+                    operacaoTransferir(c, valor, d);*/
+                //============================================================================            
+                /*temp = inputDados("Digite o numero da conta de destino: ");
+                numero = Integer.parseInt(temp);
+                Conta d = buscarConta(numero);
+                if (c != null && d != null){
+                    temp = inputDados("Digite o valor do depósito: ");
+                    double valor  = Double.parseDouble(temp);
+                    operacaoTransferir(c, valor, d);
+                }*/
                 //**
             }else if (opcao == 5){
                 temp = inputDados("Digite o número da conta");
